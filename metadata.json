@@ -1,0 +1,14 @@
+{
+  "name": "puppet-windows_time",
+  "version": "0.1.0",
+  "author": "Peter J. Pouliot <peter@pouliot.net>",
+  "summary": "A module to manage time on the Windows Operating System",
+  "license": "Apache 2.0",
+  "source": "https://github.com/ppouliot/pupppet-windows_time",
+  "project_page": "https://github.com/ppouliot/pupppet-windows_time",
+  "issues_url": "https://github.com/ppouliot/pupppet-windows_time/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
