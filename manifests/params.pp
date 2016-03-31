@@ -26,7 +26,7 @@
 #
 # Copyright 2015 Peter J. Pouliot, unless otherwise noted.
 #
-class windows_time::params { 
+class windows_time::params {
 
   $w_ntp_server     = 'pool.ntp.org'
   $w_timezone       = 'UTC'
@@ -36,7 +36,7 @@ class windows_time::params {
   case $osfamily {
     'Windows':{
       notice("NTP is managed by the windows_time module")
-    } 
+    }
     default:{
       fail("This module is not suported on ${::osfamily} operating system!")
     }
