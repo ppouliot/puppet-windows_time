@@ -7,13 +7,10 @@
 # Actions:
 #
 
-class windows_time::timezone(
-    $timezone   = $windows_time::params::timezone,
-    $winpath    = $windows_time::params::winpath,
-) inherits windows_time::params {
+class windows_time::timezone(){
 
   exec {'set_time_zone':
-    command => "${::windir}\\system32\\tzutil.exe /s \"${::timezone}\"",
+    command => "${::windir}\\system32\\tzutil.exe /s \"${windows_time::timezone}\"",
     before  => Service['w32time'],
   }
 
