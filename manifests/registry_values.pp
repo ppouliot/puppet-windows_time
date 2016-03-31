@@ -19,33 +19,26 @@
 #
 # Copyright 2015 Peter J. Pouliot, unless otherwise noted.
 #
-class windows_time::service (
+class windows_time::service (){
 
-  $w_ntp_server     = $windows_time::params::w_ntp_server,
-  $datetime_servers = $windows_time::params::datetime_servers
-  $w32time_params   = $windows_time::params::w32time_params
-
-
-) inherits windows_time::params{
-
-  registry_key{[$datetime_servers, $w32time_params]:
+  registry_key{[ $windows_time::datetime_servers, $windows_time::w32time_params]:
     ensure => present,
   }
 
   registry::value { 'DateTime Servers 0'
-    key   => $datetime_servers,
+    key   => $windows_time::datetime_servers,
     value => '0',
-    data => $w_ntp_server,
+    data => $windows_time::w_ntp_server,
   }
   registry::value { 'DateTime Servers Default':
-    key   => $datetime_servers,
+    key   => $windows_time::datetime_servers,
     value => '(Default)',
     data  => '0',
   }
   registry::value { 'W32Time Parameters':
-    key   => $w32time_parameters,
+    key   => $windows_time::w32time_parameters,
     value => 'NtpServer',
-    data  => $w_ntp_server,
+    data  => $windows_time::w_ntp_server,
   }
 
 }
