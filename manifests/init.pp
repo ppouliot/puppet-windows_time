@@ -35,7 +35,7 @@ class windows_time (
 
   $w_ntp_server     = $windows_time::params::w_ntp_server,
   $w_timezone       = $windows_time::params::w_timezone,
-  $datetime_servers = $windows_time::params::datetime_servers
+  $datetime_servers = $windows_time::params::datetime_servers,
   $w32time_params   = $windows_time::params::w32time_params
 
 ) inherits windows_time::params{
