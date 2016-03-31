@@ -10,7 +10,7 @@
 class windows_time::timezone(){
 
   exec {'set_time_zone':
-    command => "${::windir}\\system32\\tzutil.exe /s \"${windows_time::timezone}\"",
+    command => "${::windir}\\system32\\tzutil.exe /s \"${windows_time::w_timezone}\"",
     before  => Service['w32time'],
   }
 
