@@ -40,12 +40,12 @@ class windows_time::service (
   registry::value { 'DateTime Servers Default':
     key   => $datetime_servers,
     value => '(Default)',
-    data => '0',
+    data  => '0',
   }
   registry::value { 'W32Time Parameters':
     key   => $w32time_parameters,
     value => 'NtpServer',
-    data => $w_ntp_server,
+    data  => $w_ntp_server,
   }
 
 }

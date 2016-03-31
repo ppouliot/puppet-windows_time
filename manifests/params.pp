@@ -33,4 +33,12 @@ class windows_time::params {
   $datetime_servers = 'HKLM\Software\Microsoft\Windows\CurrentVersion\DateTime\Servers',
   $w32time_params   = 'HKLM\System\CurrentControlSet\services\W32Time\Parameters',
 
+  case $osfamily {
+    'Windows':{
+    {
+    default:{
+      fail("This module is not suported on ${::osfamily} operating system!")
+    }
+  }
+
 }

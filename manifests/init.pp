@@ -4,22 +4,18 @@
 #
 # === Parameters
 #
-# Document parameters here.
+# [*w_ntp_server*]
+#   The name or IP Address of your NTP Server
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [*w_timezone*]
+#   The Time Zone used on the system
 #
-# === Variables
+# [*datetime_servers*]
+#   The Registry key to specify DateTime\Servers
 #
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if
-#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should be avoided in favor of class parameters as
-#   of Puppet 2.6.)
+# [*w32time_params*]
+#   The Registry key to specificy W32Time Parameters
+
 #
 # === Examples
 #
@@ -37,16 +33,17 @@
 
 class windows_time (
 
-  $w_ntp_server = $windows_time::params::w_ntp_server,
-  $w_timezone= $windows_time::params::w_timezone,
+  $w_ntp_server     = $windows_time::params::w_ntp_server,
+  $w_timezone       = $windows_time::params::w_timezone,
+  $datetime_servers = $windows_time::params::datetime_servers
+  $w32time_params   = $windows_time::params::w32time_params
 
 ) inherits windows_time::params{
 
-  case $osfamily {
-    'Windows':{
-    {
-    default:{
-      fail("This module is not suported on ${::osfamily} operating system!")
-    }
-  }
+  class{'windows_time::timezone':}    ->
+  class{'windows_time::service':}     ->
+  class{'windows_time::time_peer':}   ->
+  class{'windows_time::update_time':} ->
+  class{'windows_time::resync':}
+
 }
