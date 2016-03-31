@@ -11,7 +11,7 @@
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
     {"name":"puppetlabs-powershell","version_requirement":">= 1.0.0"},
     {"name":"puppetlabs-registry","version_requirement":">= 1.0.0"}
-    {"name":"puppet-windows_platform_facts","version_requirement":">= 0.0.1"}
+    {"name":"windows_platform_facts","version_requirement":">= 0.0.1"}
   ]
 }
 
