@@ -28,10 +28,10 @@
 #
 class windows_time::params { 
 
-  $w_ntp_server     = 'pool.ntp.org',
-  $w_timezone       = 'UTC',
-  $datetime_servers = 'HKLM\Software\Microsoft\Windows\CurrentVersion\DateTime\Servers',
-  $w32time_params   = 'HKLM\System\CurrentControlSet\services\W32Time\Parameters',
+  $w_ntp_server     = 'pool.ntp.org'
+  $w_timezone       = 'UTC'
+  $datetime_servers = 'HKLM\Software\Microsoft\Windows\CurrentVersion\DateTime\Servers'
+  $w32time_params   = 'HKLM\System\CurrentControlSet\services\W32Time\Parameters'
 
   case $osfamily {
     'Windows':{
