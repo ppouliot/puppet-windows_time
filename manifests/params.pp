@@ -35,6 +35,7 @@ class windows_time::params {
 
   case $osfamily {
     'Windows':{
+      notice("NTP is managed by the windows_time module")
     {
     default:{
       fail("This module is not suported on ${::osfamily} operating system!")
