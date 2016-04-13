@@ -1,14 +1,17 @@
 {
-  "name": "puppet-windows_service",
-  "version": "0.0.1",
+  "name": "windows_time",
+  "version": "0.1.0",
   "author": "Peter J. Pouliot <peter@pouliot.net>",
-  "summary": "A puppet module to add windows services.",
+  "summary": "A module to manage time on the Windows Operating System",
   "license": "Apache 2.0",
-  "source": "https://github.com/ppouliot/puppet-windows_service",
-  "project_page": "https://github.com/ppouliot/puppet-windows_service",
-  "issues_url": "https://github.com/ppouliot/puppet-windows_service/issues",
+  "source": "https://github.com/ppouliot/pupppet-windows_time",
+  "project_page": "https://github.com/ppouliot/pupppet-windows_time",
+  "issues_url": "https://github.com/ppouliot/pupppet-windows_time/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-powershell","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-registry","version_requirement":">= 1.0.0"},
+    {"name":"puppet-windows_platform_facts","version_requirement":">= 0.0.1"}
   ]
 }
 
